@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<header>FollowFoodTrucks</header>
+
+		<div id="loginForm" class="center">
+			<div><input type="text" id="username" name="username" placeHolder="Username"/></div>
+			<div><input type="password" id="password" name="password" placeHolder="Password"/></div>
+			<div><button id="login" name="login">Log In</button></div>
+			<div><button id="signUp" name="signUp">Sign Up</button></div>
+		</div>
+
+		<div id="updateForm" class="center">
+			<div><input type="number" id="longitude" name="longitude" placeHolder="Longitude"/></div>
+			<div><input type="number" id="latitude" name="latitude" placeHolder="Latitude"/></div>
+			<div><button id="update" name="update" disabled>Update Location</button></div>
+		</div>
+
+		<div class="center">
+			<div id="map-canvas"/>
+		</div>
+
+	 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIKomfpjiyTnafxvPLwYACmKms0g8a508&sensor=true"></script>
+		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+		<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
+		<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
+		<script type='text/javascript' src='js/app.js'></script>
+	</body>
+
+
+</html>
