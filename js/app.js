@@ -35,19 +35,21 @@
 		$longi = $("#longitude"),
 		$lati = $("#latitude");
 
-		$(document).on("click", "#login", loginUser);
+		// $(document).on("click", "#login", loginUser);
 		$(document).on("click", "#signUp", signUpUser);
 		$(document).on("click", "#update", updateLocation);
 
 		$(document).on("keyup change", "#longitude, #latitude", createMap)
 	});
 
-	function loginUser(){
-		fBaseAuth.login('password', {
-		  email: $username.val(),
-		  password: $password.val()
-		});
-	}
+	function getLocation()
+	  {
+	  if (navigator.geolocation)
+	    {
+	    navigator.geolocation.getCurrentPosition(showPosition);
+	    }
+	  else{x.innerHTML="Geolocation is not supported by this browser.";}
+	  }
 
 	function signUpUser(){
 		fBaseAuth.createUser($username.val(), $password.val(), function(error, user) {
@@ -77,6 +79,14 @@
 			longitude: $longi.val(),
 			latitude: $lati.val()
 		});
+
+		var market = new google.maps.Marker({
+			map: map,
+			position: new google.maps.LatLng($lati.val(),$longi.val())
+		});
+
+		map.setCenter(new google.maps.LatLng($lati.val(),$longi.val()));
+		map.setZoom(12);
 
 	}
 
